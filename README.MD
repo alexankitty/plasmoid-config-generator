@@ -28,7 +28,7 @@ Example:
 ## Format
 `property alias cfg_showToolTips: showToolTips.checked //type: bool label: Whether to show tooltips when hovering task buttons. default: true`
 Make an inline comment for each cfg you want to include in your xml. Include the following: type:, label:, default:  
-Optionally: include enum:, choices:  
+Optionally: choices: if your type is enum  
 choices: are expected to be space delimited.  
 For blank strings, use either "" or ''.
 
