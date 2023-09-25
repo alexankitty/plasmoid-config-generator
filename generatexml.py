@@ -1,8 +1,6 @@
 import argparse
-import sys
 import re
 import os
-import types
 
 xmlHeader = '''<?xml version="1.0" encoding="UTF-8"?>
 <kcfg xmlns="http://www.kde.org/standards/kcfg/1.0"
@@ -125,4 +123,4 @@ xml += xmlFooter
 with open(outputPath, 'w') as f:
     f.writelines(xml)
     f.close()
-print(xml)
+print(f'Wrote config file to {outputPath}.')
