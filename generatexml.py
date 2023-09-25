@@ -25,7 +25,6 @@ class Config(object):
         return getattr(self, key)
 
 parser = argparse.ArgumentParser(
-    prog='Plasmoid Config Generator',
     description='Generates a kcfg/xml file for plasmoids to make development faster',
     epilog='Written by Alexankitty 2023.',
     add_help=True)

@@ -3,7 +3,7 @@ Generates a kcfg/xml file from a qml to make development of plasmoids faster.
 
 ## Usage
 ```sh
-usage: Plasmoid Config Generator [-h] [-m MAINDIRECTORY] [-s] [-o OUTPUT] [-x EXTRAS] filename
+usage: generatexml.py [-h] [-m MAINDIRECTORY] [-s] [-o OUTPUT] [-x EXTRAS] filename
 
 Generates a kcfg/xml file for plasmoids to make development faster
 
