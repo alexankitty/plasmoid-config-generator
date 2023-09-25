@@ -73,7 +73,7 @@ for file in files:
     with open(path, "r") as f:
         lines = f.readlines()
     for line in lines:
-        if("cfg_" in line):
+        if("cfg_" in line and "property" in line):
             config = re.findall(r'(?<=\/\/).*', line)
             if config:
                 config = config[0] #Extract the entry.
@@ -96,7 +96,7 @@ for file in files:
                     if '""' in value:
                         value = ""
                     configEntry[name] = value
-                configEntry["name"] = re.findall(r'(?<=cfg_)\w+?(?=:)', line)[0]
+                configEntry["name"] = re.findall(r'(?<=cfg_)\w+?(?=:|\s|$)', line)[0]
                 configEntries.append(configEntry)
 
 xml = xmlHeader
