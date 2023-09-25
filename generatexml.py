@@ -97,11 +97,8 @@ for file in files:
                 configEntry["name"] = re.findall(r'(?<=cfg_)\w+?(?=:)', line)[0]
                 configEntries.append(configEntry)
 
-print(files)
-print(workingDir)
-print(outputPath)
+xml = xmlHeader
 for config in configEntries:
-    xml = xmlHeader
     if config.type == "enum":
         choices = config.choices.split()
         choiceXml = ''
@@ -123,6 +120,9 @@ for config in configEntries:
       <label>{config.label}</label>
       <default>{config.default}</default>
     </entry>'''
-    xml += xmlFooter
+xml += xmlFooter
 
+with open(outputPath, 'w') as f:
+    f.writelines(xml)
+    f.close()
 print(xml)
