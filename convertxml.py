@@ -39,9 +39,12 @@ for child in root.iter("{http://www.kde.org/standards/kcfg/1.0}entry"):
             propChoice += choice.get("name") + " "
             print(choice.get("name"))
         propChoice = propChoice.strip()
-        txtFile += f'cfg_{propName} //type: {propType} label: {propLabel} enum: {propChoice} default: {propDefault}\n'
+        if propChoice:
+            txtFile += f'cfg_{propName}: //type: {propType}; label: {propLabel}; enum: {propChoice}; default: {propDefault}\n'
+        else:
+            txtFile += f'cfg_{propName}: //type: {propType}; label: {propLabel}; default: {propDefault}\n'
     else:
-        txtFile += f'cfg_{propName} //type: {propType} label: {propLabel} default: {propDefault}\n'
+        txtFile += f'cfg_{propName}: //type: {propType}; label: {propLabel}; default: {propDefault}\n'
 
 with open(outputPath, 'w') as f:
     f.writelines(txtFile)

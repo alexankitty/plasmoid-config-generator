@@ -26,11 +26,12 @@ Example:
 `python generatexml.py /home/alexandra/git/FancyTasks/package/contents/config/config.qml -m /home/alexandra/git/FancyTasks/package/contents/ui/ -x /home/alexandra/git/FancyTasks/package/contents/config/extras.txt`
 
 ## Format
-`property alias cfg_showToolTips: showToolTips.checked //type: bool label: Whether to show tooltips when hovering task buttons. default: true`
+`property alias cfg_showToolTips: showToolTips.checked //type: bool; label: Whether to show tooltips when hovering task buttons.; default: true`
 Make an inline comment for each cfg you want to include in your xml. Include the following: type:, label:, default:  
 Optionally: choices: if your type is enum  
 choices: are expected to be space delimited.  
-For blank strings, use either "" or ''.
+For blank strings, use either "" or ''.  
+All values must be ; delimited.
 
 ### Extras
 If you have configs that need saving that aren't exposed in the main config, make a separate file and pass it into the -x option.  

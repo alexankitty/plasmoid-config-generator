@@ -80,11 +80,16 @@ for file in files:
             else:
                 print(f"Warning: no comment entry for:\n{line}")
                 continue
-            print(config)
             if config:
-                names = re.findall(r'(\w+?)(?=:)', config)
-                values = re.findall(r'([^ :][^:]*)(?!\w*?:)', config)
+                names = [None] * 0
+                values = [None] * 0
                 configEntry = Config()
+                entries = config.split(";")
+                for entry in entries:
+                    print(entry)
+                    entrySplit = entry.split(":", 1)
+                    names.append(entrySplit[0].strip())
+                    values.append(entrySplit[1].strip())
                 for name, value in zip(names, values):
                     if "''" in value:
                         value = ''
@@ -96,7 +101,8 @@ for file in files:
 
 xml = xmlHeader
 for config in configEntries:
-    if config.type == "enum":
+    print(config.name)
+    if config.type == "enum" and not config.choices:
         choices = config.choices.split()
         choiceXml = ''
         for choice in choices:
