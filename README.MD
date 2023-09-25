@@ -22,6 +22,8 @@ options:
 
 Written by Alexankitty 2023.
 ```
+Example:  
+`python generatexml.py /home/alexandra/git/FancyTasks/package/contents/config/config.qml -m /home/alexandra/git/FancyTasks/package/contents/ui/ -x /home/alexandra/git/FancyTasks/package/contents/config/extras.txt`
 
 ## Format
 `property alias cfg_showToolTips: showToolTips.checked //type: bool label: Whether to show tooltips when hovering task buttons. default: true`
